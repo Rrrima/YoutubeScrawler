@@ -1,0 +1,10 @@
+author:
+	//*[@id="text"]/a
+time_duration:
+	//*[@id="movie_player"]/div[27]/div[2]/div[1]/div/span[3]
+title:
+	//*[@id="container"]/h1/yt-formatted-string
+#viewers:
+	//*[@id="count"]/yt-view-count-renderer/span[1]
+date:
+	//*[@id="date"]/yt-formatted-string

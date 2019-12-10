@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Youtube | Videos</title>
+	<link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+	<h1>The most popular videos <br>from {{end}} to {{start}} are:</h1>
+<div class="container" style="margin-left:25%">
+	<table >
+	    <tr>
+	        <th>Tile</th>
+	        <th>Author</th>
+	        <th>Viewers</th>
+	    </tr>
+	{% for s in data %}
+	    <tr>
+	        <td><a href={{s[3]}}>{{s[0]}}</a></td>
+	        <td>{{s[1]}}</td>
+	        <td>{{s[2]}}</td>
+	    </tr>
+	{% endfor %}
+	</table> 
+</div>
+<div>
+	<form action="/" class="my_form inline">
+     	<ul><li><input type="submit" value="return"></input></li></ul>
+     </form>
+ </div>
+</body>
+</html>

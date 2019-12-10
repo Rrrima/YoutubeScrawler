@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>YouTube Scrawl</title>
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+	<h1>Welcome to explore YouTube</h1>
+<div class="container c1">
+	<h2>1. Please input your query:</h2>
+	<form action='/' method="POST" class="my_form">
+	<ul>
+		<li >
+			<label for="email">Query</label>
+	    	 <input type="text" name="query" value={{query}}> 
+	    	<span>Enter a query word to search for</span>
+		</li>
+		<li>
+	    	<input type="submit" value="Update"/>
+	    </li>
+	</ul>
+	</form>
+</div>
+<div class="container">
+	<h2>2. Please specify a time period:</h2>
+	<form action="/" method="POST" class="my_form">
+	<ul>
+		<li>
+			<label for="email">Start Date</label>
+	    	 <input type="text" name="end" value={{end}}> 
+	    	<span>Enter the start time: yyyy-mm-dd</span>
+		</li>
+		<li>
+			<label for="email">End Date</label>
+	    	 <input type="text" name="start" value={{start}}> 
+	    	<span>Enter the start time: yyyy-mm-dd</span>
+		</li>
+	    <li>
+	    	<input type="submit" value="Update"/>
+	    </li>
+	</ul>
+	</form>
+</div>
+<div class="container2">
+	<h2>Start your exploration with query: <span class="emph">{{query}}</span></h2>
+	<h3>current time period:<span class="emph">{{end}}</span> to <span class="emph">{{start}}</span></h3>
+</div>
+<div class="container2">
+	<form action="/word" class="my_form inline">
+		<ul><li><input type="submit" class = "btn" value="Word"></input></li></ul>
+    </form>
+    <form action="/author" class="my_form inline">
+    	<ul><li><input type="submit" class = "btn" value = "Author"></input></li></ul>   
+     </form>
+     <form action="/video" class="my_form inline">
+     	<ul><li> <input type="submit" class = "btn" value = "Video"></input></li></ul>   
+     </form>
+     <form action="/trend" class="my_form inline">
+     	<ul><li> <input type="submit" class = "btn" value="trend"></input></li></ul>
+     </form>
+</div>
+</body>
+</html>

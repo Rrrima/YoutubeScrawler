@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Youtube | Authors</title>
+	<link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+	<h1>The most popular authors are:</h1>
+
+	<table >
+	    <tr>
+	        <th>Channel</th>
+	        <th>Subscriber</th>
+	        <th>Most recent Video</th>
+	    </tr>
+	{% for s in data %}
+	    <tr>
+	        <td><a href={{s[1]}}>{{s[0]}}</a></td>
+	        <td>{{s[2]}}</td>
+	        <td><a href={{s[4]}}>{{s[3]}}</a></td>
+	    </tr>
+	{% endfor %}
+	</table> 
+	<form action="/" class="my_form inline">
+     	<ul><li><input type="submit" value="return"></input></li></ul>
+     </form>
+
+</body>
+</html>
