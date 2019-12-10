@@ -1,3 +1,10 @@
+############################################
+# This module is for build the database of 
+# youtube data: contains functions for scrawling 
+# data and cache data
+############################################
+
+
 from selenium import webdriver
 import time
 from bs4 import BeautifulSoup as bs
@@ -19,6 +26,7 @@ def get_cache_dict():
 		CACHE_DICTION = {}
 	return CACHE_DICTION
 
+# write new records to cache file
 def write_to_cache(key,content):
 	CACHE_FNAME = 'youtube_cache.json'
 	cache_file = open(CACHE_FNAME, 'r',encoding='utf-8')
@@ -32,6 +40,7 @@ def write_to_cache(key,content):
 	fw.write(dumped_json_cache)
 	fw.close()
 
+# get links from scrawling
 def get_links(query = 'vlog'):
 	CACHE_DICTION = get_cache_dict()
 	url = "https://www.youtube.com/results?search_query="+query+"&sp=EgIQAQ%253D%253D"
@@ -65,7 +74,7 @@ def get_links(query = 'vlog'):
 	url_list = list(set(CACHE_DICTION[url]))
 	return url_list
 	
-
+# get video object from link urls
 def get_videos(vlinks):
 	CACHE_DICTION = get_cache_dict()
 	vlist = []
@@ -79,6 +88,7 @@ def get_videos(vlinks):
 		vlist.append(Video(video_dict))
 	return vlist
 
+# inset records into database
 def insert_database(query):
 	vlinks = get_links(query)
 	vlinks = list(set(vlinks))
@@ -86,14 +96,14 @@ def insert_database(query):
 	insert_author_records(video_list)
 	insert_video_records(query,video_list)
 
+# create more records in cache file
 def cache_query(query):
 	vlinks = get_links(query)
 	vlinks = list(set(vlinks))
 	video_list = get_videos(vlinks)
 
 if __name__ == '__main__':
-	# create_dbs()
-	insert_database('cook')
+	insert_database(QUERY)
 
 
 
