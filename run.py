@@ -1,3 +1,8 @@
+############################################
+# This module is for running the app using
+# flask
+############################################
+
 from database import *
 from analysis import *
 from flask import Flask,render_template,request

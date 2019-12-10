@@ -1,8 +1,17 @@
+############################################
+# This module defines 3 classes
+# Author: for each video uploader
+# Video: for each video
+# VideoExtracter: tool for parsing video urls
+############################################
+
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 import datetime as dt 
 
+# Author Object
 class Author(object):
 	def __init__(self,name,channel,subnum):
 		self.name = name
@@ -34,6 +43,9 @@ class Author(object):
 			self.subnum = 0
 			print('cant convert subnum:',self.subnum)
 
+
+# Video Ectracter:
+# parse urls into meaningful values
 class VideoExtracter(object):
 
 	XPATHS = {
@@ -108,6 +120,7 @@ class VideoExtracter(object):
 			self.date = None
 
 
+# Video Object
 class Video(object):
 	MON = {'Jan':1,'Feb':2,'Mar':3,'Apr':4,'May':5,'Jun':6,\
 			'Jul':7,'Aug':8,'Sep':9,'Oct':10,'Nov':11,'Dec':12}

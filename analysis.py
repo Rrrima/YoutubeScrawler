@@ -1,3 +1,8 @@
+############################################
+# This module is for data processing 
+###########################################
+
+
 import nltk 
 from nltk.corpus import stopwords
 from collections import defaultdict, Counter
@@ -7,6 +12,8 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import pandas as pd
 
+# remove words that are not meaninggul using
+# nltk package
 def is_valid_word(word,query):
 	stopWords = set(stopwords.words('english'))
 	stopWords.add(query)
